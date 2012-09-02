@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>WebRTC Demo</title>
+</head>
+
+<body>
+<h1>WebRTC Demo</h1>
+<video autoplay></video>
+<script type="text/javascript">
+    if (navigator.webkitGetUserMedia) {
+        navigator.webkitGetUserMedia(
+            {audio: true, video: true},
+            function(stream) {
+                var video = document.getElementsByTagName('video')[0];
+                video.src = window.webkitURL.createObjectURL(stream);
+            }, function() {
+                alert("There was an error!");
+            });
+    }
+</script>
+<hr>
+<address></address>
+<!-- hhmts start --><!-- hhmts end -->
+</body> </html>
